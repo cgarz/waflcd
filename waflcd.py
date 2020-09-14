@@ -143,14 +143,14 @@ def main():
         print('Vanilla filter file written.')
         exit(0)
 
-    if not args.filter_path:
-        parser.error('No filter file specified.')
-    else:
+    if args.filter_path:
         input_ext = args.filter_path[-4:].upper()
+    else:
+        parser.error('No filter file specified.')
     if not os.path.isfile(args.filter_path):
-        parser.error('ERROR: Specified filter file not found.')
+        parser.error('Specified filter file not found.')
     if input_ext not in VALID_FILE_EXTENSIONS.values():
-        parser.error('ERROR: Specified filter file has invalid extension. Must be: {}'.format(
+        parser.error('Specified filter file has invalid extension. Must be: {}'.format(
             ' or '.join(VALID_FILE_EXTENSIONS.values())))
     if not args.out_file:
         os.chdir(os.path.dirname(args.filter_path))
@@ -173,6 +173,7 @@ def main():
 
     print('Output file written successfully. Removing input file.')
     os.remove(args.filter_path)
+    print('Removed successfully. Conversion completed.')
 
 
 if __name__ == '__main__':
