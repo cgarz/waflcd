@@ -19,7 +19,8 @@ Simply drag filter.FTR or a decoded filter file onto waflcd.py or waflcd.exe to 
 ### command line usage:
 waflcd.py [-h] [--force] [-o [output file path]] [--restore] [filter file path]
 
-required positional argument:  
+required positional argument:
+
 Path to an encoded or decoded filter list file. Type determined by file extension. Will be removed if output file is written successfully to allow easy toggling of type.
 
 optional arguments:
