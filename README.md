@@ -32,3 +32,5 @@ optional arguments:
   Output file path. Default depends on input file's file extension. For .FTR it will be "filter.FTR_decoded.txt" and for .TXT it will be "filter.FTR"
 * --restore  
   Output a vanilla filter.FTR file. Useful if you mess up or want to restore defaults. Specify target with --out-file. Will fail if not set. --force required to overwrite.
+
+The tool is written for python 3 and requires at least python 3.6 to run due to the use of an f-string.
