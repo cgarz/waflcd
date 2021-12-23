@@ -62,7 +62,7 @@ def parse_ftr(encoded_filepath):
 
     decoded_lines = []
     for line in encoded_lines:
-        word, match_type, replace = ''.join([chr(c - OFFSET) for c in line]).split(SEPARATOR)
+        word, match_type, replace = ''.join(chr(c - OFFSET) for c in line).split(SEPARATOR)
         if match_type == 'p':
             match_type = MATCH_TYPE_P
         elif match_type == 'f':
